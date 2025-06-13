@@ -3,9 +3,9 @@ import numpy as np
 # Параметры симуляции
 SIMULATION = {
     'dt': 1/240,
-    'max_time': 10.0,      
+    'max_time': 4.0,      
     'gui': True,
-    'theta0': 0.0         
+    'theta0': 0        
 }
 
 # Параметры маятника

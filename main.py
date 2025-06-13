@@ -55,7 +55,6 @@ def main():
 
     p.disconnect()
 
-    # Вместо plot_results теперь строим траекторию
     plot_trajectory(thetas, PENDULUM['L'])
 
     pd.DataFrame({

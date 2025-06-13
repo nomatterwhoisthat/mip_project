@@ -16,7 +16,7 @@ T = 4.0
 
 # Начальное и конечное положения (в радианах)
 theta_0 = 0.0
-theta_f = np.pi / 2
+theta_f = np.pi/2
 
 
 def generate_5th_order_poly(t0, tf, q0, qf):
