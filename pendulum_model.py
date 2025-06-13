@@ -32,6 +32,5 @@ class PendulumPolyController:
 
     def compute_control(self, θ, ω, t):
         θd, ωd, αd = self.desired(t)
-        u = (self.m*self.L**2*(αd + self.kv*(ωd-ω) + self.kp*(θd-θ))
-             + self.m*self.g*self.L*np.sin(θ))
+        u = (self.m*self.L**2*(αd + self.kv*(ωd-ω) + self.kp*(θd-θ))+ self.m*self.g*self.L*np.sin(θ))
         return u

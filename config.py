@@ -3,8 +3,8 @@ import numpy as np
 # Параметры симуляции
 SIMULATION = {
     'dt': 1/240,
-    'max_time': 4.0,      
-    'gui': True,
+    'max_time': 10.0,      
+    'gui': False,
     'theta0': 0        
 }
 
