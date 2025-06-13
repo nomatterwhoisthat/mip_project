@@ -57,11 +57,6 @@ def main():
 
     plot_trajectory(thetas, PENDULUM['L'])
 
-    pd.DataFrame({
-        'time': ts, 'theta': thetas,
-        'omega': omegas, 'tau': taus
-    }).to_csv('trajectory_sim.csv', index=False)
-    print("Данные сохранены в trajectory_sim.csv")
 
 if __name__=="__main__":
     main()
