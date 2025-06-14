@@ -2,11 +2,13 @@ import pybullet as p
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from config import PENDULUM
 
 plt.style.use('ggplot')
 
 def setup_simulation(urdf_path, gui=False):
     client = p.connect(p.GUI if gui else p.DIRECT)
+    p.setGravity(0, 0, -PENDULUM['g'])
     plane = os.path.join(os.getcwd(), "plane.urdf")
     if not os.path.exists(plane):
         raise FileNotFoundError(f"plane.urdf not found: {plane}")

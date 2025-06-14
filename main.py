@@ -12,16 +12,20 @@ def main():
     T = SIMULATION['max_time']
     gui = SIMULATION['gui']
     θ0 = SIMULATION['theta0']
+    
+    
 
     pend = PendulumPolyController(
         m=PENDULUM['m'], L=PENDULUM['L'], g=PENDULUM['g'],
         T=T, theta0=θ0, thetaf=np.pi / 2
     )
 
-    pend_id = setup_simulation("simple.urdf.xml", gui=gui)
+    pend_id = setup_simulation("simple.urdf", gui=gui)
     joint = next(i for i in range(p.getNumJoints(pend_id))
                  if p.getJointInfo(pend_id, i)[2] == p.JOINT_REVOLUTE)
+    
 
+    
     set_initial_state(pend_id, joint, θ0)
 
     ts = np.arange(0, T, dt)

@@ -3,7 +3,7 @@ import numpy as np
 class PendulumPolyController:
     def __init__(self, m=1.0, L=1.0, g=9.81, T=4.0,
                  theta0=0.0, thetaf=np.pi/2,
-                 kp=100, kv=20):
+                 kp=300, kv=50):
         self.m, self.L, self.g = m, L, g
         self.kp, self.kv = kp, kv
         self.T = T
@@ -32,5 +32,6 @@ class PendulumPolyController:
 
     def compute_control(self, θ, ω, t):
         θd, ωd, αd = self.desired(t)
-        u = (self.m*self.L**2*(αd + self.kv*(ωd-ω) + self.kp*(θd-θ))+ self.m*self.g*self.L*np.sin(θ))
+        I = self.m*self.L**2
+        u = I * (αd + self.kv*(ωd-ω) + self.kp*(θd-θ))+ self.m*self.g*self.L*np.sin(θ)
         return u
