@@ -2,7 +2,7 @@ import numpy as np
 
 # Параметры симуляции
 SIMULATION = {
-    'dt': 1/240,
+    'dt': 1/500,
     'max_time': 10.0,      
     'gui': False,
     'theta0': 0        

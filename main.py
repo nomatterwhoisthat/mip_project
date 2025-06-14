@@ -25,6 +25,8 @@ def main():
                  if p.getJointInfo(pend_id, i)[2] == p.JOINT_REVOLUTE)
     
 
+    p.setTimeStep(dt)
+
     
     set_initial_state(pend_id, joint, θ0)
 

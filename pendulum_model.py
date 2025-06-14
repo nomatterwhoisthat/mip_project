@@ -3,7 +3,7 @@ import numpy as np
 class PendulumPolyController:
     def __init__(self, m=1.0, L=1.0, g=9.81, T=4.0,
                  theta0=0.0, thetaf=np.pi/2,
-                 kp=300, kv=50):
+                 kp=550, kv=20):
         self.m, self.L, self.g = m, L, g
         self.kp, self.kv = kp, kv
         self.T = T
