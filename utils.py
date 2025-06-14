@@ -22,8 +22,10 @@ def setup_simulation(urdf_path, gui=False):
 
 def set_initial_state(pend_id, joint_idx, theta0):
     p.setJointMotorControl2(pend_id, joint_idx, controlMode=p.POSITION_CONTROL, targetPosition=theta0)
-    for _ in range(1000): p.stepSimulation()
+    for _ in range(1000):
+      p.stepSimulation()
     p.setJointMotorControl2(pend_id, joint_idx, controlMode=p.VELOCITY_CONTROL, targetVelocity=0, force=0)
+
 
 def plot_comparison(times, thetas, theta_ds, omegas, omega_ds):
     fig, axs = plt.subplots(2, 1, figsize=(10, 6), sharex=True)

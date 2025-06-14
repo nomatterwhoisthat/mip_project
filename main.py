@@ -4,8 +4,6 @@ import time
 from config import SIMULATION, PENDULUM
 from utils import setup_simulation, set_initial_state, plot_comparison, plot_trajectory
 from pendulum_model import PendulumPolyController
-import matplotlib.pyplot as plt
-
 
 def main():
     dt = SIMULATION['dt']
